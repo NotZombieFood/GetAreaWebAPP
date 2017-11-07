@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+import cv2
+import numpy
 from werkzeug import secure_filename
 app = Flask(__name__)
 
@@ -13,9 +15,17 @@ def upload_file2():
     if request.method == 'POST':
         f = request.files['file']
         f.save(secure_filename(f.filename))
-        resultado = "hola Gera"
+        img = cv2.pyrDown(cv2.imread(f.filename, cv2.IMREAD_UNCHANGED))
+        # threshold image
+        ret, threshed_img = cv2.threshold(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 245, 255, cv2.THRESH_BINARY)
+        totalPixel = img.size
+        whitePixel = cv2.countNonZero(threshed_img)
+        restar = whitePixel / totalPixel * 100
+        print(restar)
+        print(100 - restar)
+        resultado = (100 - restar)
         return render_template("results.html", resultado=resultado)
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run()
