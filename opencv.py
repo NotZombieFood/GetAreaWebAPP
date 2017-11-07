@@ -2,10 +2,10 @@ import numpy
 import cv2
 
 # read and downscale image
-img = cv2.pyrDown(cv2.imread('black.jpg', cv2.IMREAD_UNCHANGED))
+img = cv2.pyrDown(cv2.imread('italy.jpg', cv2.IMREAD_UNCHANGED))
 # threshold image
 # this step is neccessary when you work with contours
-ret, threshed_img = cv2.threshold(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 150, 255, cv2.THRESH_BINARY)
+ret, threshed_img = cv2.threshold(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 245, 255, cv2.THRESH_BINARY)
 # find contours in image
 image, contours, hier = cv2.findContours(threshed_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 totalPixel = threshed_img.size
