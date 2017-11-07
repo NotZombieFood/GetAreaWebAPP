@@ -17,8 +17,8 @@ def upload_file2():
         f.save(secure_filename(f.filename))
         img = cv2.pyrDown(cv2.imread(f.filename, cv2.IMREAD_UNCHANGED))
         # threshold image
-        ret, threshed_img = cv2.threshold(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 245, 255, cv2.THRESH_BINARY)
-        totalPixel = img.size
+        ret, threshed_img = cv2.threshold(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 150, 255, cv2.THRESH_BINARY)
+        totalPixel = threshed_img.size
         whitePixel = cv2.countNonZero(threshed_img)
         restar = whitePixel / totalPixel * 100
         print(restar)
