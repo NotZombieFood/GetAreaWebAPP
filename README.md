@@ -18,7 +18,7 @@ Web app written in python (uses flask and opencv) that gets the area of an objec
 3. Instalar pip 
 4. Instalar virtualenv mediante "pip install virtualenv". 
 5. Crear un virtual env mediante "mkvirtualenv metodos".
-6. Ir al folder donde clonamos el repo y correr el siguiente comando "setprojectdir .", mediante esto cada vez que ingresemos al entorno se´redireccionará al folder. Para salir del entorno tenemos que usar "deactivate" y para regresar "workon InnoverAPI". Si todo funciona debería de salirnos **(InnoverAPI)** antes de nuestro cursor en la consola.
+6. Ir al folder donde clonamos el repo y correr el siguiente comando "setprojectdir .", mediante esto cada vez que ingresemos al entorno se´redireccionará al folder. Para salir del entorno tenemos que usar "deactivate" y para regresar "workon InnoverAPI". Si todo funciona debería de salirnos **(metodos)** antes de nuestro cursor en la consola.
 7. Correr "pip install -r requirements.txt"
 8. Correr  "python3 app.py" o "python app.py"
 9. En nuestra url local en el puerto 8080 se debería ver un el sitio.
